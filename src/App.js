@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 const initialFriends = [
   {
     id: 118836,
@@ -19,6 +19,43 @@ const initialFriends = [
     balance: 0,
   },
 ];
+
+export default function App(){
+  return (
+    <div className="app">
+      <div className="sidebar">
+       <FriendsList />
+      </div>
+    </div>
+  );
+}
+
+function FriendsList(){
+  const friends=initialFriends;
+
+  return(
+    <ul>
+      {friends.map((friend) => (
+        <Friend friend={friend} key={friend.id}/>
+      ))}
+    </ul>
+  );
+}
+
+function Friend({ friend }){
+  console.log(friend);
+return <li>{friend.name}</li>;
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
