@@ -25,6 +25,7 @@ export default function App(){
     <div className="app">
       <div className="sidebar">
        <FriendsList />
+       
       </div>
     </div>
   );
@@ -61,14 +62,20 @@ return (
       <p> You and {friend.name} are even </p>
     )}
 
-    <button className="button">Select</button>
+    <Button>Select</Button>
 
   </li>
 )
 
 }
 
+function Button({children}){
+  return <button className='button'>{children}</button>
+}
 
+function FormAddFriend(){
+  
+}
 
 
 
