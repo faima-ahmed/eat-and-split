@@ -26,6 +26,7 @@ export default function App(){
       <div className="sidebar">
        <FriendsList />
        <FormAddFriend/>
+       <Button>Add friend</Button>
       </div>
     </div>
   );
@@ -83,6 +84,18 @@ function FormAddFriend(){
       <input type="text"/>
 
       <Button>Add</Button>
+    </form>
+  )
+}
+
+function FormSplitBill(){
+  return(
+    <form className="from-split-bill">
+      <h2>Split a bill with X</h2>
+
+      <label>💰 Bill value</label>
+      <input type="text"/>
+
     </form>
   )
 }
