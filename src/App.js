@@ -28,6 +28,8 @@ export default function App(){
        <FormAddFriend/>
        <Button>Add friend</Button>
       </div>
+
+      
     </div>
   );
 }
@@ -98,6 +100,17 @@ function FormSplitBill(){
 
       <label>🧍‍♀️ Your expense</label>
       <input type="text"/>
+
+      <label>👩🏼‍🤝‍👩🏼 X's expense</label>
+      <input type="text" disable/>
+
+      <label>🤑 Who is paying the bill</label>
+      <select>
+        <option value="user">You</option>
+        <option value="friend">X</option>
+      </select>
+
+      <Button>Split bill</Button>
 
     </form>
   )
