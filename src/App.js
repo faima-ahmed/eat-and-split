@@ -162,7 +162,7 @@ function FormSplitBill({selectedFriend}) {
       <label>🧍‍♀️ Your expense</label>
       <input type="text"
       value={paidByUser}
-      onChange={(e) => setPaidByUser(Number(e.target.value))}/>
+      onChange={(e) => setPaidByUser(Number(e.target.value)>bill? paidByUser:Number(e.target.value))}/>
 
       <label>👩🏼‍🤝‍👩🏼 {selectedFriend.name}'s expense</label>
       <input type="text" disabled value={paidByFriend}/>
