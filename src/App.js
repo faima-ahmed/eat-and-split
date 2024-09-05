@@ -46,7 +46,8 @@ export default function App(){
   return (
     <div className="app">
       <div className="sidebar">
-       <FriendsList friends={friends} onSelection={handleSelection}/>
+       <FriendsList friends={friends} onSelection={handleSelection}
+       selectedFriend={selectedFriend}/>
        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend}/>}
        <Button onClick={handleShowAddFriend}>{showAddFriend? "Close" : "Add friend"}</Button>
       </div>
@@ -146,13 +147,13 @@ function FormSplitBill({selectedFriend}) {
       <label>🧍‍♀️ Your expense</label>
       <input type="text"/>
 
-      <label>👩🏼‍🤝‍👩🏼 X's expense</label>
+      <label>👩🏼‍🤝‍👩🏼 {selectedFriend.name}'s expense</label>
       <input type="text" disabled/>
 
       <label>🤑 Who is paying the bill</label>
       <select>
         <option value="user">You</option>
-        <option value="friend">X</option>
+        <option value="friend">{selectedFriend.name}</option>
       </select>
 
       <Button>Split bill</Button>
