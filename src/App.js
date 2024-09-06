@@ -58,12 +58,13 @@ export default function App(){
   );
 }
 
-function FriendsList({friends, onSelection}){
+function FriendsList({friends, onSelection, selectedFriend}){
 
   return(
     <ul>
       {friends.map((friend) => (
         <Friend friend={friend} key={friend.id}
+        selectedFriend={selectedFriend}
         onSelection={onSelection}
        />
       ))}
@@ -71,7 +72,7 @@ function FriendsList({friends, onSelection}){
   );
 }
 
-function Friend({ friend , onSelection}){
+function Friend({ friend , onSelection, selectedFriend}){
   console.log(friend);
 return (
   <li>
