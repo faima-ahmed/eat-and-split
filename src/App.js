@@ -73,9 +73,11 @@ function FriendsList({friends, onSelection, selectedFriend}){
 }
 
 function Friend({ friend , onSelection, selectedFriend}){
-  console.log(friend);
+  const isSelected= selectedFriend?.id === friend?.id;
+  //console.log(selectedFriend);
+  //console.log(friend);
 return (
-  <li>
+  <li className={isSelected? "selected" : ""}>
     <img src={friend.image} alt={friend.name} />
     <h3>{friend.name}</h3>
 
@@ -91,7 +93,7 @@ return (
       <p> You and {friend.name} are even </p>
     )}
 
-    <Button onClick={() => onSelection(friend)}>Select</Button>
+    <Button onClick={() => onSelection(friend)}>{isSelected ? "Close" : "Select"}</Button>
 
   </li>
 )
