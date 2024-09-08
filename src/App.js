@@ -40,8 +40,12 @@ export default function App(){
   }
 
   function handleSelection(friend){
-    setSelectedFriend(friend);
-  }
+    //setSelectedFriend(friend);
+    setSelectedFriend((selected) =>
+      selected.id === friend.id? null : friend
+    );
+    }
+  
 
   return (
     <div className="app">
